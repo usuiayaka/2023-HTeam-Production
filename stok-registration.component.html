@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7e8cf;
+        }
+
+        header {
+            background-color: #7d0842;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .current-datetime {
+            text-align: left;
+            margin:  50px 0; /* 上部の余白を調整 */
+            font-size: 14px;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        h2.page-title {
+            text-align: center;
+            color: #b10a0a;
+        }
+
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            font-size: 20px;
+            flex-direction: column;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            z-index: 1;
+            display: none;
+        }
+
+        .menu-container a {
+            margin: 10px 0;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        .inventory-item-container {
+            background-color: #fff;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .inventory-indicator {
+    width: 40px;
+    height: 40px;
+    background-color: #3391cf; /* 望む青い色に変更してください */
+    border-radius: 5px; /* 正方形の形状を作るためにborder-radiusを使用 */
+    margin-right: 10px;
+}
+
+
+        .people-text {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            color: #000;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 6px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            border: 2px solid #7d0842;
+            background-color: #fff;
+            color: #000;
+            border-radius: 5px;
+        }
+
+        .filter-label {
+            margin-right: 10px;
+        }
+
+        .registration-button {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #7d0842;
+            border-radius: 5px;
+            padding: 6px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .add-button {
+            background-color: #088d2e;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .button-container {
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f7e8cf;
+            padding: 10px;
+        }
+
+        .button-container button {
+            margin: 0 5px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            header {
+                padding-left: 40px;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+
+            .menu-container {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .people-text {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #000;
+    font-size: 15px; /* Increased font size */
+    font-weight: bold; /* Added bold style */
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            ☰
+            <div class="menu-container">
+                <a href="#">市町村選択</a>
+                <a href="#">掲示板</a>
+                <a href="#">アカウント</a>
+                <a href="#">在庫登録</a>
+                <a href="#">選択画面</a>
+            </div>
+        </div>
+        <h1>Shelter pro</h1>
+    </header>
+
+    <div class="current-datetime"></div>
+
+    <!-- サンプルの在庫アイテムコンテナ -->
+    <div class="inventory-item-container">
+        <div class="inventory-indicator"></div>
+        <div>
+            <p>アイテム名: 食料品A</p>
+        </div>
+        <div class="people-text">人分</div>
+    </div>
+
+    <div class="inventory-item-container">
+        <div class="inventory-indicator"></div>
+        <div>
+            <p>アイテム名: 衣類B</p>
+        </div>
+        <div class="people-text">人分</div>
+    </div>
+
+    <div class="inventory-item-container">
+        <div class="inventory-indicator"></div>
+        <div>
+            <p>アイテム名: 医薬品C</p>
+        </div>
+        <div class="people-text">人分</div>
+    </div>
+
+    <table>
+        <!-- 在庫テーブルの内容をここに追加できます -->
+    </table>
+
+    <div class="button-container">
+        <button onclick="scrollToTop()">戻る</button>
+        <button class="registration-button">登録確定</button>
+    </div>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMenu() {
+            const menuContainer = document.querySelector('.menu-container');
+            menuContainer.style.display = (menuContainer.style.display === 'none' || menuContainer.style.display === '') ? 'flex' : 'none';
+        }
+
+          // 現在の日時を取得する関数
+          function getCurrentDateTime() {
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            return now.toLocaleDateString('ja-JP', options);
+        }
+
+        // ページが読み込まれたときに日時を表示する関数
+        window.addEventListener('load', function () {
+            const currentDateTimeDiv = document.querySelector('.current-datetime');
+            currentDateTimeDiv.textContent = ' ' + getCurrentDateTime();
+        });
+    </script>
+
+    </script>
+
+</body>
+
+</html>
