@@ -9,7 +9,7 @@
         background-color: #f7e8cf;
         font-family: 'Roboto', sans-serif;
         line-height: 1.6;
-        font-size: 19px;
+        font-size: 16px;
         margin: 0px;
       }
       .container {
@@ -116,5 +116,5 @@
         border: 3px solid #7d0842; /* ボーダーなし */
         border-radius: 5px; /* 丸い形状にする */
         cursor: pointer; /* ホバー時にポインターを表示 */
-        font-size: 23px;
+        font-size: 16px;
       }
