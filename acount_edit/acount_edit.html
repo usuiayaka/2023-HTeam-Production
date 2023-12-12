@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularUp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="C:\Users\wolf\Desktop\WIZ\システム開発１\Hteam\Shelter\acount_edit\style.css">
+
+</head>
+
+<body class="mat-typography">
+
+<div class="edit">
+  <div class="container">
+  <!--アカウントアイコンと変更したいなら写真にアクセスしますよのボタン--->
+  <img src="C:\Users\wolf\Desktop\WIZ\システム開発１\Hteam\Shelter\がさいゆのjpg.jpg" alt="Account Icon" class="account-icon">
+  <img src="C:\Users\wolf\Desktop\WIZ\システム開発１\Hteam\Shelter\がさいゆのjpg.jpg" alt="Account Icon" class="account-icon">
+  </div>
+  
+  <form>
+<!-- ユーザーネーム -->
+<div class="form_txt">
+  <label for="user_name">ユーザー<br>ネーム</label>
+  <input type="text" id="user_name" name="user_name" size="20">
+</div>
+
+<!-- TEL -->
+<div class="form_txt">
+  <label for="tel">TEL☎</label>
+  <input type="text" id="tel" name="tel" size="20">
+</div>
+
+<!-- 受入可能人数 -->
+<div class="form_txt">
+  <label for="capacity">受入可能<br>人数</label>
+  <input type="text" id="capacity" name="capacity" size="20">
+</div>
+
+    <div class="form_radio"><!--inputの後にlabelじゃないと動かない--->
+      <p><b>避難所タイプ</b></p><!--ラジオボタンのnameはグループ形成のため-->
+      <input type="radio" id="a" name="shelter_type" value="specified">
+      <label for="a">指定避難所</label>
+      <input type="radio" id="b" name="shelter_type" value="general">
+      <label for="b">一般避難所</label>
+    <input type="radio" id="error" name="shelter_type" value="fool">
+    <label for="error">不明</label>
+    </div>
+
+    <div class="form_chk">
+      <p><b>対応する災害</b></p>
+      <input type="checkbox" id="earthquake" name="disaster" value="earthquake">
+      <label for="earthquake">地震</label>
+      <input type="checkbox" id="flood" name="disaster" value="flood">
+      <label for="flood">洪水</label>
+      <input type="checkbox" id="typhoon" name="disaster" value="typhoon">
+      <label for="typhoon">台風</label>
+    </div>
+  </div>
+    <div class="form_but">
+      <input type="submit" value="戻る">
+      <input type="reset" value="保存">
+    </div>
+  </form>
+</div>
+</body>
+</html>
+
