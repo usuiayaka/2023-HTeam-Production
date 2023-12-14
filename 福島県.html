@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>福島県地図</title>
+  <style>
+    body {
+      display: flex;
+      background-color: #f7e8cf;
+      /* ページ全体の背景色 */
+      justify-content: center;
+      align-items: center;
+      height: 200vh;
+      margin: 0;
+    }
+
+    .label2 {
+      position: absolute;
+      font-size: 23px;
+      top: 150px;
+      /* 地図の上部に配置 */
+      left: 50%;
+      transform: translateX(-50%);
+      /*画面上部の市町村を選択してくださいのラベル*/
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1;
+      /*配置レベルを1に設定*/
+    }
+
+
+    /* 戻るボタンのスタイル */
+    #backButton {
+      position: absolute;
+      bottom: -500px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+      color: #000000;
+      padding: 5px 20px;
+      border: 2px solid #7d0842;
+      /* 枠線の色 */
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    /* レスポンシブデザイン用メディアクエリ */
+    @media (max-width: 480px) {
+      .label2 {
+        font-size: 18px;
+        top: 5px;
+      }
+
+      #backButton {
+        bottom: 5px;
+      }
+    }
+
+    /* レスポンシブデザイン用メディアクエリ */
+  </style>
+</head>
+
+<body>
+
+  <div>
+
+    <button id="backButton" onclick="goToHome()">戻る</button>
+
+    <div class="label2">
+      福島県の市町村を選択してください。
+    </div>
+
+  </div>
+
+  <img src="haikeinasi.png" usemap="#ImageMap" alt="" />
+  <map name="ImageMap">
+    <area shape="rect" coords="402,424,479,469" href="shirakawa" alt="" /> <!-- 白河市 -->
+    <area shape="rect" coords="513,470,535,503" href="asakawa" alt="" /><!-- 浅川町 -->
+    <area shape="rect" coords="548,413,602,469" href="hurudono" alt="" /><!-- 古殿町 -->
+    <area shape="rect" coords="480,434,546,471" href="ishikawa" alt="" /><!-- 石川町 -->
+    <area shape="rect" coords="513,357,546,435" href="tamakawa" alt="" /><!-- 玉川村 -->
+    <area shape="rect" coords="559,243,692,323" href="tamurasi" alt="" /><!-- 田村市 -->
+    <area shape="rect" coords="346,200,400,243" href="banndai" alt="" /><!-- 磐梯町 -->
+    <area shape="rect" coords="459,178,489,244" href="ootama" alt="" /><!--大玉村-->
+    <area shape="rect" coords="401,121,456,245" href="inawashiro" alt="" /><!--猪苗代町-->
+    <area shape="rect" coords="480,358,512,391" href="kagamiishi" alt="" /><!--鏡石町-->
+    <area shape="rect" coords="525,245,557,322" href="miharu" alt="" /><!--三春町-->
+    <area shape="rect" coords="491,223,558,243" href="motomiya" alt="" /><!--本宮市-->
+    <area shape="rect" coords="346,358,478,389" href="tennei" alt="" /><!--天栄村-->
+    <area shape="rect" coords="492,178,569,221" href="nihonnmatu" alt="" /><!--二本松市-->
+    <area shape="rect" coords="549,324,613,357" href="ono" alt="" /><!--小野町-->
+    <area shape="rect" coords="379,246,524,321" href="kooriyama" alt="" /><!--郡山市-->
+    <area shape="rect" coords="549,358,601,412" href="hirata" alt="" /><!--平田村-->
+    <area shape="rect" coords="379,324,546,357" href="sukagawa" alt="" /><!--須賀川市-->
+  </map>
+
+
+</body>
+
+</html>
