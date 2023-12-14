@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+      background-color: #f7e8cf;
+    }
+ 
+    header {
+      background-color: #7d0842; /* あずき色 */
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+ 
+    h1 {
+      color: #fff; /* 白色の文字 */
+    }
+    h2 {
+        border-bottom: 2px solid rgba(248, 177, 10);
+    }
+ 
+    .hamburger-menu {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: #fff;
+      font-size: 20px;
+      
+    }
+ 
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border: 1px solid #ddd;
+      z-index: 1;
+      display: none;
+    }
+ 
+    .menu-container a {
+      margin: 10px 0;
+    }
+ 
+    select {
+      padding: 8px;
+      font-size: 16px;
+    }
+ 
+    .account-name-container {
+      background-color: #f7e8cf;
+      padding: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .shelter-name-container {
+      background-color: #fff;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+ 
+    .divider {
+      width: 2px;
+      height: 100%;
+      background-color: #7d0842;
+      margin: 0 10px;
+    }
+ 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+ 
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+ 
+    th {
+      background-color: #f2f2f2;
+    }
+ 
+    tr {
+      background-color: #f5f5f5;
+    }
+ 
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    @media only screen and (max-width: 600px) {
+      header {
+        padding-left: 40px; /* メニューアイコンの分、左側を広げる */
+      }
+ 
+      .hamburger-menu {
+        display: block;
+      }
+ 
+      .menu-container {
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+    }
+    .double-frame-table {
+  border-collapse: collapse;
+}
+
+.double-frame-table td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.double-height-cell {
+  height: 100px; /* 左側セルの高さを2つ分に設定 */
+}
+
+.vertical-top {
+  vertical-align: top; /* テキストを上端に配置 */
+}
+
+.top-right-frame {
+  border-top: none; /* 右上セルの上側の枠を削除 */
+  border-left: none; /* 右上セルの左側の枠を削除 */
+}
+
+.bottom-right-frame {
+  border-top: none; /* 右下セルの上側の枠を削除 */
+  border-left: none; /* 右下セルの左側の枠を削除 */
+}
+.account-name-container div p {
+    margin: 0;
+}
+
+
+  </style>
+</head>
+<body>
+ 
+  <header>
+    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+    <h1>アプリ名</h1>
+  </header>
+ 
+  <div class="menu-container">
+    <a href="#">市町村選択</a>
+    <a href="#">掲示板</a>
+    <a href="#">アカウント</a>
+    <a href="#">在庫登録</a>
+    <a href="#">選択画面</a>
+  </div>
+ 
+  <div class="account-name-container">
+    <img src="path/to/file" style="width: 50px; height: 50px;">
+    <h2>須賀川市役所</h2>
+    <img src="path/to/file" style="width: 50px; height: 50px;">
+</div>
+<div class="account-name-container">
+    <div>
+        <p>TEL</p>
+        <h2>000-1234-5678</h2>
+    </div>
+    <div>
+        <p>避難所タイプ</p>
+        <h2>指定避難所</h2>
+    </div>
+</div>
+  <table class="double-frame-table">
+    <tr>
+      <td rowspan="2" class="double-height-cell vertical-top">物資一覧</td>
+      <td class="top-right-frame vertical-top">受け入れ可能人数</td>
+    </tr>
+    <tr>
+      <td class="bottom-right-frame vertical-top">対応する災害</td>
+    </tr>
+  </table>
+  <div class="account-name-container">
+    <div>
+      <p>住所</p>
+      <h2>〒101-0000 福島県須賀川市００００​</h2>
+    </div>
+</div>
+  
+  
+<!--   
+  
+  <div class="shelter-name-container">
+    <div>
+      <p>別のコンテンツ: 例えば何か</p>
+    </div>
+    <div class="divider"></div>
+    <div>
+      <p>別の情報: 例えば何か</p>
+    </div>
+  </div>
+  -->
+  <!-- <div class="shelter-name-container">
+    <div>
+      <p>さらなるコンテンツ: 例えば何か</p>
+    </div>
+    <div class="divider"></div>
+    <div>
+      <p>詳細情報: 例えば何か</p>
+    </div>
+  </div> -->
+  <!-- Google マップの埋め込みコード -->
+  <iframe
+  width="600"
+  height="450"
+  style="border:0;"
+  loading="lazy"
+  allowfullscreen
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1486931.4055282836!2d140.32190409540413!3d37.76024090217381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z8J2J5aSn6aeF!5e0!3m2!1sja!2sjp!4v1561315163644!5"></iframe>
+
+ 
+  <div align="center" class="example">
+    <button onclick="scrollToTop()">戻る</button>
+    <button onclick="scrollToTop()">変更</button>
+  </div>
+ 
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+ 
+    function toggleMenu() {
+      const menuContainer = document.querySelector('.menu-container');
+      menuContainer.style.display = (menuContainer.style.display === 'none' || menuContainer.style.display === '') ? 'flex' : 'none';
+    }
+  </script>
+ 
+</body>
+</html>
