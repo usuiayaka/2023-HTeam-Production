@@ -155,6 +155,32 @@
 .account-name-container div p {
     margin: 0;
 }
+.double-frame-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.double-frame-table td {
+  border: 20px solid #ffe8cf; /* ベージュ色の枠線を設定 */
+  padding: 5px;
+}
+
+.double-height-cell {
+  height: 100px; /* 左側セルの高さを2つ分に設定 */
+}
+
+.vertical-top {
+  vertical-align: top; /* テキストを上部に配置 */
+}
+button {
+  margin-top: 10px;
+  padding: 5px 50px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid red; /* 1pxの赤い枠線 */
+  background-color: #fff; /* 白色の背景 */
+  color: #000; /* 黒色の文字 */
+}
 
 
   </style>
@@ -175,9 +201,9 @@
   </div>
  
   <div class="account-name-container">
-    <img src="path/to/file" style="width: 50px; height: 50px;">
+    <img src="path/to/file" style="width: 100px; height: 100px;">
     <h2>須賀川市役所</h2>
-    <img src="path/to/file" style="width: 50px; height: 50px;">
+    <img src="path/to/file" style="width: 100px; height: 100px;">
 </div>
 <div class="account-name-container">
     <div>
@@ -229,8 +255,8 @@
   </div> -->
   <!-- Google マップの埋め込みコード -->
   <iframe
-  width="600"
-  height="450"
+  width="100%"
+  height="400"
   style="border:0;"
   loading="lazy"
   allowfullscreen
